@@ -51,7 +51,7 @@ export default function HomePage() {
       <section className="relative">
         <div className="px-3 md:px-6 lg:px-8">
           <div
-            className="hero-image relative w-full h-[80vh] min-h-[520px] max-h-[880px] bg-[--color-sand] overflow-hidden ring-1 ring-[--color-ink]/5"
+            className="group hero-image relative w-full h-[80vh] min-h-[520px] max-h-[880px] bg-[--color-sand] overflow-hidden ring-1 ring-[--color-ink]/5"
             style={{ boxShadow: "0 40px 80px -32px rgb(30 58 76 / 0.35), 0 12px 24px -16px rgb(30 58 76 / 0.18)" }}
           >
             <Image
@@ -59,7 +59,7 @@ export default function HomePage() {
               alt="Rear extension to a Cambridge Victorian semi, Crittall glazing onto a long garden"
               fill
               sizes="100vw"
-              className="object-cover hero-image-zoom"
+              className="object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-[1.04]"
               priority
             />
             {/* Bottom-edge gradient so the caption sits in shadow */}

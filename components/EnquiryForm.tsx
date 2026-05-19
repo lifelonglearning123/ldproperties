@@ -186,16 +186,20 @@ export function EnquiryForm({ source }: { source?: string }) {
 
       {/* Message */}
       <fieldset className="pt-2">
-        <legend className="eyebrow mb-2">A note from you</legend>
-        <label htmlFor="message" className="block mb-3 text-sm">A few words about your project, the house, or what&rsquo;s prompted the enquiry</label>
-        <textarea
-          id="message"
-          name="message"
-          rows={5}
-          value={data.message}
-          onChange={(e) => update("message", e.target.value)}
-          className="w-full bg-transparent border-0 border-b border-[--color-ink]/30 py-3 text-lg focus:border-[--color-ink] focus:outline-none transition-colors resize-none"
-        />
+        <legend className="eyebrow mb-4">A note from you</legend>
+        <div className="bg-[--color-paper] border border-[--color-ink]/15 p-6 md:p-7">
+          <label htmlFor="message" className="block mb-4 text-sm font-medium text-[--color-ink]">
+            A few words about your project, the house, or what&rsquo;s prompted the enquiry
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={5}
+            value={data.message}
+            onChange={(e) => update("message", e.target.value)}
+            className="w-full bg-transparent border border-[--color-ink]/20 focus:border-[--color-gold] p-4 text-base focus:outline-none transition-colors resize-none"
+          />
+        </div>
       </fieldset>
 
       {status === "error" && (
@@ -264,24 +268,40 @@ function RadioGroup({
   options: { value: string; label: string }[];
 }) {
   return (
-    <div>
-      <p className="block mb-4 text-sm" dangerouslySetInnerHTML={{ __html: label }} />
+    <div className="bg-[--color-paper] border border-[--color-ink]/15 p-6 md:p-7">
+      <p
+        className="block mb-5 text-sm font-medium text-[--color-ink]"
+        dangerouslySetInnerHTML={{ __html: label }}
+      />
       <div className="flex flex-wrap gap-2">
-        {options.map((o) => (
-          <label key={o.value} className="group cursor-pointer">
-            <input
-              type="radio"
-              name={name}
-              value={o.value}
-              checked={value === o.value}
-              onChange={() => onChange(o.value)}
-              className="peer sr-only"
-            />
-            <span className="inline-block border border-[--color-ink]/25 px-4 py-2 text-sm tracking-wide hover:border-[--color-ink] peer-checked:bg-[--color-ink] peer-checked:text-[--color-stone] peer-checked:border-[--color-ink] transition-colors duration-200">
-              <span dangerouslySetInnerHTML={{ __html: o.label }} />
-            </span>
-          </label>
-        ))}
+        {options.map((o) => {
+          const isChecked = value === o.value;
+          return (
+            <label key={o.value} className="cursor-pointer">
+              <input
+                type="radio"
+                name={name}
+                value={o.value}
+                checked={isChecked}
+                onChange={() => onChange(o.value)}
+                className="sr-only"
+              />
+              <span
+                className="inline-block border-2 px-4 py-2 text-sm tracking-wide transition-all duration-200"
+                style={{
+                  backgroundColor: isChecked ? "var(--color-gold)" : "transparent",
+                  borderColor: isChecked
+                    ? "var(--color-gold)"
+                    : "color-mix(in oklab, var(--color-ink) 20%, transparent)",
+                  color: "var(--color-ink)",
+                  fontWeight: isChecked ? 600 : 400,
+                }}
+              >
+                <span dangerouslySetInnerHTML={{ __html: o.label }} />
+              </span>
+            </label>
+          );
+        })}
       </div>
     </div>
   );

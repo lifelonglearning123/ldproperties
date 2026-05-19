@@ -25,10 +25,10 @@ export const site = {
     email: "studio@ldproperties.uk", // TODO: confirm email
   },
 
-  // Coordinates approximated from CB5 8RN — verify against Google Business Profile before launch.
+  // Coordinates from the Google Maps embed for 15 Peverel Road, Cambridge CB5 8RN.
   geo: {
-    latitude: "52.1923",
-    longitude: "0.1466",
+    latitude: "52.20998",
+    longitude: "0.16322",
   },
 
   // Hours
@@ -58,9 +58,9 @@ export const site = {
 
   // Google Business Profile
   gbp: {
-    placeId: "", // TODO: paste Google Place ID
-    cid: "", // TODO: paste GBP CID
-    mapsUrl: "", // TODO: paste short Google Maps URL
+    placeId: "", // TODO: paste Google Place ID once GBP listing is live
+    cid: "", // TODO: paste GBP CID once GBP listing is live
+    mapsUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.8384327522067!2d0.16322172686040903!3d52.20998352198164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8706b020a0647%3A0x7e8c7f8adcf93bbb!2sPeverel%20Rd%2C%20Cambridge%20CB5%208RN!5e0!3m2!1sen!2suk!4v1779227473173!5m2!1sen!2suk",
   },
 
   // Accreditations — surface in trust bar
