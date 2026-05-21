@@ -20,8 +20,8 @@ export const site = {
     postalCode: "CB5 8RN",
     addressCountry: "GB",
     addressRegion: "Cambridgeshire",
-    telephone: "+44 1223 000000", // TODO: confirm phone
-    telephoneDisplay: "01223 000 000", // TODO: confirm phone (display format)
+    telephone: "+44 1223 658186",
+    telephoneDisplay: "01223 658 186",
     email: "studio@ldproperties.uk", // TODO: confirm email
   },
 
